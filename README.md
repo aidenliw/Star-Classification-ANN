@@ -13,7 +13,7 @@ Celestial bodies and stars go through a life cycle that begins with their birth 
 
 A star has different temperatures, luminosity, radius, magnitude, and color during each stage. These properties are helpful for determining the star type. The primary purpose of this project is to demonstrate that stars follow a specific pattern on the Hertzsprung-Russell Diagram, providing valuable insights into celestial bodies' behavior. This classification can assist in understanding the lifecycle and characteristics of stars and is a fundamental problem in astrophysics.
 
-![Hertzsprung-Russell Diagram](image/hertzsprung-russell-diagram.png)
+![Hertzsprung-Russell Diagram](images/hertzsprung-russell-diagram.png)
 
 ## Problem Statement
 The dataset contains 240 rows and 7 columns of data:
@@ -38,11 +38,11 @@ The preprocessing of the data involved standardizing numerical features and empl
 ### Data Visualization
 The correlation plot provides insights into the relationships between different features. Notably, Absolute Magnitude and Star Type exhibit a robust negative linear correlation of -0.96. In contrast, Radius and Temperature display minimal correlation (0.064). The remaining features showcase moderately correlated relationships with values ranging from 0.4 to 0.7.
 
-![Correlation Plot](image/correlation-plot.png)
+![Correlation Plot](images/correlation-plot.png)
 
 The 3D plot visually illustrates the interplay between Absolute Magnitude, Temperature, Spectral Class, and Star Type. Each dot in the plot is color-coded to represent the five distinct types of stars. The grouping of dots with the same color signifies that Absolute Magnitude, Temperature, and Spectral Class collectively contribute to effective star-type classification.
 
-![3D Plot](image/3d-plot.png)
+![3D Plot](images/3d-plot.png)
 
 ### Hyperparameter Tuning
 #### Loss Function
@@ -51,7 +51,7 @@ Categorical Cross Entropy was selected as the most suitable choice among the thr
 #### Learning Rate and Optimizer 
 Four optimizers were tested to determine the optimal learning rate and number of epochs. Analysis indicated distinct optimal learning rate ranges for each optimizer: SGD=1, RMSprop=0.01, Adam=0.01, and Adadelta=1. Adam emerged as the best choice with the fastest convergence rate, most stable accuracy, and most tolerant of the initial learning rate setting. The best epoch number for Adam is around 300.
 
-![Optimizer Learning Rate](image/optimizer-learning-rate.png)
+![Optimizer Learning Rate](images/optimizer-learning-rate.png)
 
 ### Activation Function Hidden Layers and Units 
 Three activation functions for hidden layers were compared: Relu, Tanh, and Sigmoid. Tanh emerged as the frontrunner with superior accuracy in both training and testing, displaying a swifter convergence rate.
@@ -65,12 +65,12 @@ SoftMax was chosen for the output layer, as it is more suitable for multi-class 
 ### Mini-batch
 Different mini-batch sizes were explored, with a batch size of 32 demonstrating the highest accuracy (99.15%) with a computational time of 9.5 seconds. However, given the relatively smaller dataset, mini-batch usage was deemed optional, and computational efficiency was prioritized.
 
-![Mini-batch Comparison](image/mini-batch-comparison.png)
+![Mini-batch Comparison](images/mini-batch-comparison.png)
 
 ### Cross Validation
 5-fold cross validation was employed, yielding an impressive 100% accuracy across all five iterations, showcasing the model's robustness and reliability for predicting star types on previously unseen datasets.
 
-![Cross Validation](image/cross-validation.png)
+![Cross Validation](images/cross-validation.png)
 
 ### Final Testing
 In the final testing phase, the model achieved a flawless 100% accuracy on the reserved 20% of the dataset. This impeccable performance solidifies the model's effectiveness and reliability in accurately predicting star types.
